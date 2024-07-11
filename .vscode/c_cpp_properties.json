@@ -8,6 +8,8 @@
       "includePath": [
         "/home/cagopalin2/ros2_ws/install/my_robot_interfaces/include/**",
         "/opt/ros/humble/include/**",
+        "/opt/ros/humble/include/example_interfaces/example_interfaces/msg/**",
+        "/opt/ros/humble/include/example_interfaces/example_interfaces/msg/empty.hpp",
         "/home/cagopalin2/ros2_ws/src/my_moving_robot/include/**",
         "/home/cagopalin2/ros2_ws/install/my_robot_interfaces/include/**",
         "/home/cagolinux/ros2_ws/install/my_robot_interfaces/include/**",

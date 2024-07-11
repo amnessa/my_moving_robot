@@ -17,7 +17,7 @@ public:
         cb_group_=this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
         moving_robot_server_=rclcpp_action::create_server<MovingRobot>(
             this,
-            "location_speed",
+            "moving_robot",
             std::bind(&MovingRobotServerNode::goal_callback,this, _1,_2),
             std::bind(&MovingRobotServerNode::cancel_callback,this,_1),
             std::bind(&MovingRobotServerNode::handle_accepted_callback,this,_1),
@@ -86,13 +86,9 @@ private:
         //get request from goal
         int goal_position = goal_handle->get_goal()->position;
         int velocity = goal_handle->get_goal()->velocity;
-        int total_interval = 100;
-        int total_distance = 100;
-
-
+        
         // execute the action
-
-        int counter=0;
+  
         auto result = std::make_shared<MovingRobot::Result>();
         auto feedback = std::make_shared<MovingRobot::Feedback>();
         rclcpp::Rate loop_rate(1.0);
